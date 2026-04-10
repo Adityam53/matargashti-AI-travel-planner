@@ -25,17 +25,19 @@ export const TokyoCity = () => {
   return (
     <>
       <div className="main-content">
-        <Travel
-          destination={data.destination}
-          best_time={data.best_time}
-          duration_days={data.duration_days}
-          top_attractions={data.top_attractions}
-          sample_itinerary={data.sample_itinerary}
-          budget_low={data.estimated_budget_eur.low}
-          budget_mid={data.estimated_budget_eur.mid}
-          budget_high={data.estimated_budget_eur.high}
-          local_tips={data.local_tips}
-        />
+        {data && (
+          <Travel
+            destination={data.destination}
+            best_time={data.best_time}
+            duration_days={data.duration_days}
+            top_attractions={data.top_attractions}
+            sample_itinerary={data.sample_itinerary}
+            budget_low={data.estimated_budget_eur.low}
+            budget_mid={data.estimated_budget_eur.mid}
+            budget_high={data.estimated_budget_eur.high}
+            local_tips={data.local_tips}
+          />
+        )}
       </div>
     </>
   );
