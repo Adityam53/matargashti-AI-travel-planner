@@ -5,6 +5,9 @@ export const Nav = () => {
   return (
     <>
       <div>
+        <Link to={"/"}>
+          <h2 className="brand accent-color border-bottom">matargashti</h2>
+        </Link>
         <nav className="nav">
           <ul className="navbar">
             <li className="nav-item">

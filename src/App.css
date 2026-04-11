@@ -1,17 +1,27 @@
+/* ===== BRAND ===== */
 .brand {
   padding: 1rem;
-  border-bottom: 0.5px solid #4b4b4b;
+  border: none;
 }
 
 .heading {
   margin-bottom: 2rem;
 }
+
 .accent-color {
   color: #ada1e0;
 }
+
 .light-text {
   color: #8d8585;
 }
+
+.footer-lg {
+  border-top: 0.5px solid #4b4b4b;
+  padding: 0.5rem;
+  margin-top: auto; /* 🔥 MAGIC LINE */
+}
+/* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
   top: 0;
@@ -20,19 +30,25 @@
   width: 300px;
   background: linear-gradient(145deg, #1b1b1b, #151515);
   border-right: 0.5px solid #4b4b4b;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ===== MAIN CONTENT ===== */
 .main-content {
   margin-left: 300px;
-  padding: 1.5rem 5rem 1.5rem 5rem;
+  padding: 1.5rem 5rem;
   height: 100vh;
   overflow-y: auto;
 }
 
+/* ===== TEXT ===== */
 .text-lg {
   font-size: 2.5rem;
 }
 
+/* ===== NAV (kept if needed) ===== */
 .navbar {
   list-style: none;
   display: flex;
@@ -42,8 +58,10 @@
 
 .nav {
   padding-top: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem;
+}
+.nav-desktop {
+  display: block;
 }
 
 .nav-link {
@@ -51,7 +69,7 @@
 }
 
 .nav-item {
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
 }
 
@@ -59,18 +77,14 @@
   background-color: #ada1e0;
 }
 
+/* ===== FLEX ===== */
 .flex {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
-.budget {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
+/* ===== HEADER ===== */
 .city-header {
   margin-bottom: 2rem;
 }
@@ -80,12 +94,15 @@
   font-weight: 600;
 }
 
+/* ===== CARDS ===== */
 .cards {
   display: flex;
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
-
+.cards .card h4 {
+  margin-top: 0.5rem;
+}
 .card {
   flex: 1;
   background: linear-gradient(145deg, #1b1b1b, #151515);
@@ -100,7 +117,7 @@
   border-color: #ada1e0;
 }
 
-/* Section spacing */
+/* ===== SECTIONS ===== */
 .section {
   margin-top: 2.5rem;
 }
@@ -109,7 +126,7 @@
   margin-bottom: 1rem;
 }
 
-/* Tags (Top Attractions) */
+/* ===== TAGS ===== */
 .tags {
   display: flex;
   gap: 1rem;
@@ -130,7 +147,7 @@
   color: black;
 }
 
-/* Itinerary Cards */
+/* ===== ITINERARY ===== */
 .itinerary-card {
   display: flex;
   gap: 1.2rem;
@@ -147,7 +164,7 @@
   border-color: #ada1e0;
 }
 
-/* Day Circle */
+/* ===== DAY ===== */
 .day {
   background: #ada1e0;
   color: black;
@@ -161,7 +178,13 @@
   flex-shrink: 0;
 }
 
-/* Budget cards upgrade */
+/* ===== BUDGET ===== */
+.budget {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .budget-card {
   flex: 1;
   background: linear-gradient(145deg, #1b1b1b, #151515);
@@ -176,7 +199,7 @@
   transform: translateY(-3px);
 }
 
-/* Tips styling */
+/* ===== TIPS ===== */
 .tips {
   margin-top: 1rem;
   padding-left: 1.2rem;
@@ -188,19 +211,21 @@
   line-height: 1.5;
 }
 
+/* ===== PLANNER ===== */
 .planner-card {
   margin-bottom: 2rem;
   background: linear-gradient(145deg, #1b1b1b, #151515);
   padding: 1.2rem;
   border-radius: 0.7rem;
   border: 1px solid #2a2a2a;
-  transition: 0.25s;
 }
+
 .planner-options {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
+
 .options {
   width: 100%;
   display: flex;
@@ -216,9 +241,107 @@
 
 .generate-btn {
   background: #ada1e0;
-  border: 1px solid #ada1e0;
+  border: none;
   border-radius: 1rem;
   padding: 1rem;
   width: 100%;
   cursor: pointer;
+}
+
+/* ===== DROPDOWN (NEW) ===== */
+.brand-dropdown {
+  display: none;
+  padding: 1rem;
+  border-bottom: 0.5px solid #4b4b4b;
+}
+
+.brand-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.border-bottom {
+  border-bottom: 0.5px solid #4b4b4b;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.dropdown-item {
+  text-decoration: none;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  transition: 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #ada1e0;
+  color: black;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 1.5rem 2rem;
+  }
+
+  .cards,
+  .budget,
+  .planner-options {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
+  .footer-lg {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .brand-dropdown {
+    display: block;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.8rem;
+  }
+
+  .card,
+  .budget-card,
+  .planner-card {
+    padding: 1rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
 }

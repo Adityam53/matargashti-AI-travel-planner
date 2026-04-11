@@ -1,36 +1,48 @@
 import { Heading } from "./Heading";
 import { Planner } from "./Planner";
 import { Travel } from "./Travel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 export const MainContent = () => {
-  const [city, setCity] = useState("Prague");
-  const [country, setCountry] = useState("Czech Republic");
-  const [day, setDay] = useState(8);
-  const [submited, setSubmited] = useState({
-    city: "",
-    country: "",
-    day: "",
-  });
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [day, setDay] = useState(null);
 
-  const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["travel", submited.city, submited.country, submited.day],
+  const [queryParams, setQueryParams] = useState(null);
+
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    const savedParams = queryClient.getQueryData(["travelParams"]);
+
+    if (savedParams) {
+      setCity(savedParams.city);
+      setCountry(savedParams.country);
+      setDay(savedParams.day);
+      setQueryParams(savedParams);
+    }
+  }, [queryClient]);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["travel", queryParams],
     queryFn: () =>
       axios
         .get(
-          `https://travel-planner-backend-pi.vercel.app/api/travel-plan?city=${submited.city}&country=${submited.country}&days=${submited.day}`,
+          `https://travel-planner-backend-pi.vercel.app/api/travel-plan?city=${queryParams.city}&country=${queryParams.country}&days=${queryParams.day}`,
         )
         .then((res) => res.data),
-
-    enabled: !!submited.city && !!submited.country && !!submited.day,
+    enabled: !!queryParams,
     staleTime: Infinity, //No unnecessary refetch for 24 hours
-    cacheTime: Infinity, //keep in cache for 24h
+    gcTime: Infinity, //keep in cache for 24h
+
+    placeholderData: (prev) => prev,
   });
 
   const handleGenerate = () => {
-    setSubmited({ city, country, day });
+    const params = { city, country, day };
+    setQueryParams(params);
+    queryClient.setQueryData(["travelParams"], params);
   };
   if (isLoading)
     return (
