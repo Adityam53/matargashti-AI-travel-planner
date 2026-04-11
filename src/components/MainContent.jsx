@@ -24,7 +24,7 @@ export const MainContent = () => {
       setQueryParams(savedParams);
     }
   }, [queryClient]);
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, isFetching, error } = useQuery({
     queryKey: ["travel", queryParams],
     queryFn: () =>
       axios
@@ -44,7 +44,7 @@ export const MainContent = () => {
     setQueryParams(params);
     queryClient.setQueryData(["travelParams"], params);
   };
-  if (isLoading)
+  if (isLoading || isFetching)
     return (
       <div className="main-content">
         <Heading /> <Planner />
@@ -72,7 +72,7 @@ export const MainContent = () => {
           day={day}
           setDay={setDay}
           onGenerate={handleGenerate}
-          active={isLoading}
+          active={isLoading || isFetching}
         />
         {data && (
           <Travel
