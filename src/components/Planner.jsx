@@ -162,7 +162,7 @@ export const Planner = ({
           </div>
         </div>
         <button onClick={onGenerate} type="submit" className="generate-btn">
-          {active ? "generating your travel plan" : "generate travel plan"}
+          {active ? "generating your travel plan...." : "generate travel plan"}
         </button>
       </div>
     </>

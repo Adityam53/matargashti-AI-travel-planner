@@ -44,7 +44,7 @@ export const MainContent = () => {
     setQueryParams(params);
     queryClient.setQueryData(["travelParams"], params);
   };
-  if (isLoading || isFetching)
+  if (isLoading)
     return (
       <div className="main-content">
         <Heading /> <Planner />
