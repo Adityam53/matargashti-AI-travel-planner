@@ -1,16 +1,114 @@
-# React + Vite
+# Matargashti – AI Travel Planner App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack AI-powered travel planner application where users can generate personalized travel itineraries based on city, country, and number of days. The app dynamically creates detailed travel plans using OpenRouter and AI models via the OpenAI SDK.
+Developed using React JS, React Router, React Query, Node JS, Express and AI integration.
 
-Currently, two official plugins are available:
+## Demo Link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Live Demo](https://matargashti-ai-travel-planner.vercel.app/)
 
-## React Compiler
+## Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+git clone <your-repo-url>
+cd travel-planner
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React JS
+* React Router
+* @tanstack/react-query
+* Node JS
+* Express
+* OpenRouter
+* OpenAI SDK
+* Axios
+
+## Demo Video
+
+Watch a walkthrough of all major features of this app:(https://www.loom.com/share/d16da6d1a75341c7ade511447a7c98d6)
+
+## Features
+
+**Home**
+
+* Interface to select city, country and number of days.
+* Generate travel plan on button click.
+
+**Travel Plan**
+
+* Displays complete itinerary including:
+
+  * Best time to visit.
+  * Top attractions.
+  * Day-wise itinerary.
+  * Budget estimates (low, mid, high).
+  * Local travel tips.
+
+**Smart Data Handling**
+
+* API is triggered only on button click.
+* No API calls on dropdown/input change.
+* Controlled fetching using React Query.
+
+**State Management**
+
+* Separation of form state and query state.
+* Prevents unnecessary re-renders and API calls.
+
+**Caching**
+
+* Uses React Query for global caching.
+* Data persists across navigation.
+* Prevents redundant API calls.
+
+**User Experience**
+
+* Old data remains visible during new fetch.
+* No UI flicker.
+* Button updates to “Generating…” during API call.
+* Handles both initial loading and background fetching.
+
+## API Reference
+
+### **GET /api/travel-plan**<br>
+
+Generate Travel Plan<br>
+Query Params:<br>
+
+```
+city
+country
+days
+```
+
+Sample Request:<br>
+
+```
+/api/travel-plan?city=Tokyo&country=Japan&days=7
+```
+
+Sample Response:<br>
+
+```
+{
+  destination,
+  best_time,
+  duration_days,
+  top_attractions,
+  sample_itinerary,
+  estimated_budget_eur: {
+    low,
+    mid,
+    high
+  },
+  local_tips
+}
+```
+
+## Contact
+
+For bugs or feature requests, please reach out to ([adityamoorjmalani53@gmail.com](mailto:adityamoorjmalani53@gmail.com))
