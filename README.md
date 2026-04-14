@@ -10,8 +10,8 @@ Developed using React JS, React Router, React Query, Node JS, Express and AI int
 ## Quick Start
 
 ```
-git clone <your-repo-url>
-cd travel-planner
+git clone https://github.com/Adityam53/matargashti-AI-travel-planner.git
+cd frontend
 npm install
 npm run dev
 ```
