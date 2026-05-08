@@ -48,7 +48,10 @@ export const MainContent = () => {
     return (
       <div className="main-content">
         <Heading /> <Planner />
-        <p className="light-text">Loading travel plan...</p>
+        <div className="loading-state">
+          <div className="loading-spinner"></div>
+          <p className="light-text">Finding hidden gems for your journey...</p>
+        </div>{" "}
       </div>
     );
 

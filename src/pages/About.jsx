@@ -1,62 +1,104 @@
+import {
+  HiSparkles,
+  HiOutlineGlobeAlt,
+  HiOutlineLightningBolt,
+} from "react-icons/hi";
+
 import { FaPlaneDeparture } from "react-icons/fa";
-import { LuNotebook } from "react-icons/lu";
-import { HiLocationMarker } from "react-icons/hi";
 
 export const About = () => {
   return (
     <div className="main-content">
-      <div className="city-header flex">
-        <FaPlaneDeparture color="#ada1e0" size={45} />
-        <div>
-          <h1>about matargashti</h1>
-          <p className="light-text">
-            Your AI-powered travel planning companion
-          </p>
+      {/* HERO */}
+      <section className="about-hero">
+        <div className="hero-badge">
+          <HiSparkles /> About Voyara
         </div>
-      </div>
 
-      <div className="card">
-        <h3>What is this project?</h3>
-        <p className="light-text">
-          Matargashti is an AI-powered travel planner that helps users generate
-          personalized travel itineraries based on their destination, duration,
-          and preferences. It simplifies travel planning by providing curated
-          attractions, daily plans, and budget insights instantly.
+        <h1>
+          Travel planning,
+          <br />
+          redesigned for modern explorers.
+        </h1>
+
+        <p className="light-text about-copy">
+          Voyara helps travelers build smarter itineraries, discover local
+          experiences, and spend less time researching blogs, maps, and endless
+          tabs.
         </p>
-      </div>
+      </section>
 
-      <div className="section">
-        <h3>Key Features</h3>
-
-        <div className="cards">
-          <div className="card">
-            <HiLocationMarker size={25} />
-            <h4>Smart Destination Planning</h4>
-            <p className="light-text">
-              Get tailored travel plans for cities around the world.
-            </p>
+      {/* STORY */}
+      <section className="section">
+        <div className="about-story-card">
+          <div className="story-icon">
+            <FaPlaneDeparture size={28} />
           </div>
 
-          <div className="card">
-            <LuNotebook size={25} />
-            <h4>Day-wise Itinerary</h4>
-            <p className="light-text">
-              Detailed daily schedules with attractions and activities.
-            </p>
-          </div>
+          <div>
+            <p className="story-label">Our Vision</p>
 
-          <div className="card">
-            <FaPlaneDeparture size={25} />
-            <h4>Instant AI Results</h4>
+            <h3>Travel experiences should feel curated, not overwhelming.</h3>
+
             <p className="light-text">
-              Generate complete travel plans in seconds.
+              Most trip planning tools overload users with scattered
+              information. Voyara simplifies the process with immersive
+              itineraries, destination insights, budget guidance, and
+              personalized recommendations — all in one place.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="section">
-        <h3>Tech Stack</h3>
+      {/* FEATURES */}
+      <section className="section">
+        <div className="section-heading">
+          <p>Platform Features</p>
+          <h2>Built for modern travelers.</h2>
+        </div>
+
+        <div className="feature-grid">
+          <div className="feature-card">
+            <HiOutlineGlobeAlt size={30} />
+
+            <h3>Smart Itineraries</h3>
+
+            <p className="light-text">
+              Personalized day-wise travel plans curated around your destination
+              and duration.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <HiOutlineLightningBolt size={30} />
+
+            <h3>Fast Planning</h3>
+
+            <p className="light-text">
+              Generate immersive travel experiences in seconds without hours of
+              manual research.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <HiSparkles size={30} />
+
+            <h3>Local Experiences</h3>
+
+            <p className="light-text">
+              Discover attractions, hidden gems, routes, and smarter ways to
+              explore new cities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* TECH STACK */}
+      <section className="section">
+        <div className="section-heading">
+          <p>Technology</p>
+          <h2>Powered by a modern stack.</h2>
+        </div>
 
         <div className="tags">
           <span className="tag">React</span>
@@ -66,15 +108,25 @@ export const About = () => {
           <span className="tag">OpenRouter AI</span>
           <span className="tag">React Query</span>
         </div>
-      </div>
+      </section>
 
-      <div className="section">
-        <div className="card">
+      {/* FINAL CTA */}
+      <section className="section">
+        <div className="about-footer-card">
+          <p className="footer-mini-title">Smarter travel starts here</p>
+
+          <h2>
+            Spend less time planning
+            <br />
+            and more time exploring.
+          </h2>
+
           <p className="light-text">
-            Built with ❤️ by a curious developer exploring AI + travel tech.
+            Voyara was built to make travel planning feel effortless, immersive,
+            and inspiring.
           </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

@@ -16,8 +16,16 @@ export const TokyoCity = () => {
     cacheTime: 1000 * 60 * 60 * 24, //keep in cache for 24h
   });
 
-  if (isLoading)
-    return <p className="light-text main-content">Loading travel plan...</p>;
+  if (isLoading) {
+    return (
+      <div className="main-content">
+        <div className="loading-state">
+          <div className="loading-spinner"></div>
+          <p className="light-text">Building your Tokyo guide...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (error)
     return <p className="light-text main-content">Something went wrong</p>;

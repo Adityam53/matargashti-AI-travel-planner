@@ -12,11 +12,16 @@ export const Travel = ({
 }) => {
   return (
     <div className="">
-      <div className="city-header flex">
-        <HiLocationMarker size={45} />
-        <div>
-          <h1 className="">{destination}</h1>
-          <p className="light-text">Your AI-generated travel guide</p>
+      <div className="destination-banner">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
+          alt={destination}
+        />
+
+        <div className="destination-banner-overlay">
+          <span>{duration_days} Day Journey</span>
+          <h1>{destination}</h1>
+          <p>Curated travel experiences for modern explorers.</p>
         </div>
       </div>
 
@@ -60,9 +65,23 @@ export const Travel = ({
       <div className="section">
         <h3>Estimated Budget (EUR)</h3>
         <div className="budget">
-          <div className="budget-card">Low: €{budget_low}</div>
-          <div className="budget-card">Mid: €{budget_mid}</div>
-          <div className="budget-card">High: €{budget_high}</div>
+          <div className="budget-card">
+            <span>Budget</span>
+            <h2>€{budget_low}</h2>
+            <p className="light-text">Affordable travel experience</p>
+          </div>
+
+          <div className="budget-card">
+            <span>Comfort</span>
+            <h2>€{budget_mid}</h2>
+            <p className="light-text">Balanced hotels & activities</p>
+          </div>
+
+          <div className="budget-card">
+            <span>Premium</span>
+            <h2>€{budget_high}</h2>
+            <p className="light-text">Luxury stays & experiences</p>
+          </div>
         </div>
       </div>
 

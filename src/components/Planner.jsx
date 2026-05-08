@@ -80,6 +80,7 @@ export const Planner = ({
     "Queenstown",
     "Wellington",
   ];
+
   const countries = [
     "Czech Republic",
     "India",
@@ -104,21 +105,28 @@ export const Planner = ({
     "South Korea",
     "New Zealand",
   ];
+
   const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
   return (
     <>
       <div className="planner-card">
+        <div className="planner-top">
+          <p className="planner-label">Plan smarter</p>
+          <h3>Where are you headed next?</h3>
+        </div>
+
         <div className="planner-options">
           <div className="options">
-            <label htmlFor="">city</label>
+            <label>City</label>
+
             <select
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              name="city"
-              id=""
               className="select"
             >
-              <option value="">select a city</option>
+              <option value="">Select a city</option>
+
               {cities.map((city) => (
                 <option key={city} value={city}>
                   {city}
@@ -126,16 +134,17 @@ export const Planner = ({
               ))}
             </select>
           </div>
+
           <div className="options">
-            <label htmlFor="">country</label>
+            <label>Country</label>
+
             <select
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              name=""
-              id=""
               className="select"
             >
-              <option value="">select a country</option>
+              <option value="">Select a country</option>
+
               {countries.map((country) => (
                 <option key={country} value={country}>
                   {country}
@@ -143,26 +152,28 @@ export const Planner = ({
               ))}
             </select>
           </div>
+
           <div className="options">
-            <label htmlFor="">days</label>
+            <label>Duration</label>
+
             <select
               value={day}
               onChange={(e) => setDay(e.target.value)}
-              name=""
-              id=""
               className="select"
             >
-              <option value="">select number of days</option>
+              <option value="">Select number of days</option>
+
               {days.map((day) => (
                 <option key={day} value={day}>
-                  {day}
+                  {day} Days
                 </option>
               ))}
             </select>
           </div>
         </div>
+
         <button onClick={onGenerate} type="submit" className="generate-btn">
-          {active ? "generating your travel plan...." : "generate travel plan"}
+          {active ? "Crafting your itinerary..." : "Build My Itinerary"}
         </button>
       </div>
     </>

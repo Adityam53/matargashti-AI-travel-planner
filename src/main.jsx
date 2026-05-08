@@ -7,6 +7,7 @@ import { TokyoPlanner } from "./pages/TokyoPlanner.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Layout } from "./components/Layout.jsx";
 import { About } from "./pages/About.jsx";
+import { Home } from "./pages/Home.jsx";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +17,8 @@ createRoot(document.getElementById("root")).render(
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<App />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/planner" element={<App />}></Route>
             <Route path="/tokyo-planner" element={<TokyoPlanner />}></Route>
             <Route path="/about" element={<About />}></Route>
           </Routes>

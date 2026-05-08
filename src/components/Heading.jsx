@@ -1,18 +1,24 @@
-import { FaPlaneDeparture } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi";
+
 export const Heading = () => {
   return (
     <>
-      <div className="heading">
-        <div className="flex">
-          <FaPlaneDeparture color="#ada1e0" size={45} />
-          <div>
-            <h1 className="">travel planner</h1>
-            <p className="light-text">
-              Plan you next travel adventure with matargashti!
-            </p>
-          </div>
+      <section className="hero-section">
+        <div className="hero-badge planner-badge">
+          <HiSparkles /> Smart Travel Planning
         </div>
-      </div>
+
+        <h1>
+          Build travel itineraries
+          <br />
+          that actually feel personal.
+        </h1>
+
+        <p className="light-text hero-copy">
+          Personalized routes, hidden gems, smarter budgets, and immersive
+          day-wise planning.
+        </p>
+      </section>
     </>
   );
 };
