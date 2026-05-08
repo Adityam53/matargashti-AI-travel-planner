@@ -1,16 +1,16 @@
-# Matargashti – AI Travel Planner App
+# Voyara – AI Travel Planner App
 
 A full-stack AI-powered travel planner application where users can generate personalized travel itineraries based on city, country, and number of days. The app dynamically creates detailed travel plans using OpenRouter and AI models via the OpenAI SDK.
 Developed using React JS, React Router, React Query, Node JS, Express and AI integration.
 
 ## Demo Link
 
-[Live Demo](https://matargashti-ai-travel-planner.vercel.app/)
+[Live Demo](https://voyara-ai-travel-planner.vercel.app/)
 
 ## Quick Start
 
 ```
-git clone https://github.com/Adityam53/matargashti-AI-travel-planner.git
+git clone https://github.com/Adityam53/Voyara-AI-travel-planner.git
 cd frontend
 npm install
 npm run dev
