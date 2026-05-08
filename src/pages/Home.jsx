@@ -40,6 +40,7 @@ export const Home = () => {
           <img
             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
             alt="Travel"
+            loading="lazy"
           />
 
           <div className="floating-card card-1">
@@ -97,6 +98,7 @@ export const Home = () => {
             <img
               src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1200&auto=format&fit=crop"
               alt="Tokyo"
+              loading="lazy"
             />
             <div className="destination-overlay">
               <h3>Tokyo</h3>
@@ -108,6 +110,7 @@ export const Home = () => {
             <img
               src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200&auto=format&fit=crop"
               alt="Bali"
+              loading="lazy"
             />
             <div className="destination-overlay">
               <h3>Bali</h3>
@@ -119,6 +122,7 @@ export const Home = () => {
             <img
               src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1200&auto=format&fit=crop"
               alt="Paris"
+              loading="lazy"
             />
             <div className="destination-overlay">
               <h3>Paris</h3>
